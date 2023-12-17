@@ -1,20 +1,17 @@
 [tool.poetry]
 name = "tallermk"
 version = "0.1.0"
-description = "taller mecanido diseñado en DUOC"
+description = "Taller mecánico diseñado en DUOC"
 authors = ["Williams Diaz Santander"]
 readme = "README.md"
-poetry = "1.7.1"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-django = { version = "4.2.1", extras = ["appweb/requirements.txt"] }
+django = "^4.2.1"
 pillow = "*"
 django-crispy-forms = "*"
 crispy-bootstrap5 = "*"
 
-
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
-
