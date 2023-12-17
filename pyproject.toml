@@ -17,3 +17,6 @@ crispy-bootstrap5 = "*"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+extras = ["path:./appweb/requirements.txt"]
