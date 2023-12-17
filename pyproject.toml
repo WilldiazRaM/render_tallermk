@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "taller mecanido diseñado en DUOC"
 authors = ["Williams Diaz Santander"]
 readme = "README.md"
-poetry = "1.1.4"
+poetry = "1.7.1"
 
 [tool.poetry.dependencies]
 python = "^3.12"
