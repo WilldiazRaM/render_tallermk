@@ -1,0 +1,86 @@
+{% extends 'base.html ' %}
+{% load static %}
+{% block contenido %}
+
+<main>
+
+   {% if messages %}
+   {% for m in messages %}    
+
+   
+     {% endfor %}
+   {% endif %}  
+
+
+
+
+
+  <div class="container" id="cont1" role="banner">  <!--Presentación pagina principal-->
+    <div class="container-fluid">
+      
+      <div class="row"> 
+         <div class="container"><div class="col-4"><img id="logoIndex" aria-label="Imagen del Logotipo taller rayo mackween" src="{% static 'images/logo1.png' %}"/></div></div>   
+              <h1>¿Quienes Somos?</h1>
+        <article role="region" aria-label="Descripcion del taller mecanico.">
+          <p> Somos un grupo de Mecanicos especializados que decidimos iniciar nuestro Taller mecanico.
+           Cada participantes aportan con su experiencia y habilidades particulares.
+           Mientras uno es especialista en electrónica automotriz, otro es especialista en cajas de cambio y otro en suspensión y dirección.
+          </p>
+          <p>
+           Nuestro taller esta en pleno crecimiento y ya nos hemos posicionado dentro de los mejores en una zona caracterizada por tener amplia competencia del mercado.
+          </p>
+          
+         <h2 aria-label="Seccion Garantia">Garantía</h2>
+         <p>Las reparaciones de un vehículo a motor tienen una garantía de tres meses o dos mil kilómetros recorridos, es decir, lo que antes suceda. La pieza nueva instalada tendrá además el plazo de garantía general de dos años.</p>
+       </ul>
+       </article>  
+      <br>
+      <br>
+      <br>
+  <div class="container"><div class="col-4"><img id="logoIndex" aria-label="Imagen del Logotipo taller rayo mackween" src="{% static 'images/logo1.png' %}"/></div></div>        
+  <h2 aria-label="Seccción ¿Quienes Somos?">Nuestro equipo</h2>
+            <h5>Colaboradores de Nuestro taller <i class="fa-solid fa-screwdriver-wrench fa-flip fa-xl" style="color: #595959;"></i></h5>
+            <br>
+            <br>
+            <div class="row" style="margin-bottom: 80px;">
+               <em>Busca Mecanico por Nombre</em>
+               <form class="d-flex" role="buscar" action="" method="POST"> 
+                  {% csrf_token %}
+                 <input class="form-control me-2" type="search" name="valor_buscar" placeholder="Buscar..." aria-label="Buscar">
+                 <button class="btn btn-outline-success" id="buscarNav" type="submit">Buscar</button>
+                 
+               </form>
+            {% for p in mecanicos %}
+            
+            <div class="card bg-success text-white" style="width: 18rem; margin-bottom: 60px; margin-top: 60px;">
+               {% if p.foto %}
+                  <img class="card-img-top" src="{{ p.foto.url }}" alt="Imagen de mecanico del taller Rayomkween">
+               {% else %}
+                  <img class="card-img-top" src="{% static 'images/default_mecanico.jpg' %}" alt="Imagen de mecanico por defecto">
+               {% endif %}
+               <div class="card-body">
+                  <h5 class="card-title"></h5>
+                  <p class="card-text"> <b><strong>{{ p.nombre }} {{ p.apellido }}</strong></b></p>
+               </div>
+               <ul class="list-group list-group-flush">
+                  
+                  <li class="list-group-item">Nombre: {{ p.nombre }}</li>
+                  <li class="list-group-item">Apellido: {{ p.apellido }}</li>
+                  <li class="list-group-item">Rut: {{ p.rut }}</li>
+                  <li class="list-group-item">Descripcion: {{ p.descripcion }}</li>
+                  <li class="list-group-item">Email: {{ p.email }}</li>
+               </ul>
+            </div>
+         {% empty %}
+            <div class="card" style="margin-bottom: 60px; margin-top: 100px;">
+              
+            <p style="color: red; text-align: center;"><strong><i class="fa-solid fa-xmark fa-beat-fade fa-lg" style="color: #ff0000;"></i>***No se encontraron mecánicos****<i class="fa-solid fa-xmark fa-beat-fade fa-lg" style="color: #ff0000;"></i></strong></p>
+          
+            </div>  
+         {% endfor %}
+            
+
+            
+</main> 
+  {%endblock%}
+  

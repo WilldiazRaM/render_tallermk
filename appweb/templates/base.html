@@ -1,0 +1,191 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/logo1.ico' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">    
+    <link rel='stylesheet' href="{% static '/style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous"> 
+    <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>     
+    <title>Taller Mecanido de Rayo Mkween</title>
+</head>
+<body class="p-3 mb-2 bg-dark text-white">
+  <header>
+    <!-- Menu de navegacion -->
+    <div class="container">      
+      <div class="row">    
+       <nav class="navbar fixed-top navbar bg-dark p-4" data-bs-theme="dark" >
+         <div class="col-4"></div>        
+         <a class="navbar-brand" href="#" aria-label="Menu de navegación"> <div class="container"><div class="col-4"><img id="logoNavBar" src="{% static 'images/logo1.png' %}"/></div></div><i class="fa-solid fa-t fa-spin fa-lg" style="color: #13aa2c;"></i>aller Mecanico Rayo Mkween <em>Garantia es confianza.</em> </a>
+         
+         <div class="container" id="botonesNav"> <div class="col-4"><!-- Botones LOGIN -->
+          {% if user.is_authenticated %}
+          <a href="{% url 'logout' %}" class="btn btn-outline-light me-2">
+              Cerrar Sesion <i class="fa-solid fa-power-off fa-beat-fade fa-XL" style="color: #dd0303;"></i>
+            </a>
+          <button  type="button" class="btn btn-success">Bienvenido {{user.username}}! <i class="fa-solid fa-user-astronaut fa-bounce fa-2xl" style="color: #000000;"></i></button>
+          {% else %}
+          <a href="{% url 'login' %}" class="btn btn-outline-light me-2">
+            Login
+          </a>
+          <button  type="button" class="btn btn-success">RayoMkween© <br>{{user.username}}</button> 
+           
+          {% endif %}     
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"        
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Botón de Menu.">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio<i class="fa-solid fa-house fa-2xs"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'galeriaMecanicos' %}">¿Quienes Somos? <i class="fa-sharp fa-solid fa-image fa-2xs"></i></a>
+            </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'trabaja_con_nosotros' %}"><i class="fa-solid fa-arrow-right fa-beat-fade fa-sm" style="color: #a70101;"></i></i>¡Trabaja con Nosotros!<i class="fa-solid fa-arrow-left fa-fade fa-lg" style="color: #a70101;"></i></a>
+          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" data-bs-toggle="dropdown"
+                aria-expanded="false" aria-labelledby="accessLink">
+                Acceso<i class="fa-solid fa-lock fa-2xs"></i></a>
+              <ul class="dropdown-menu">              
+                
+                <li><a class="dropdown-item" href="{% url 'login' %}">| Ingreso | Login |  <i class="fa-solid fa-lock fa-2xs"></i></a></li>
+                
+            </li>
+            
+          </ul>
+          <li class="nav-item"><a class="nav-link" href="{% url 'contacto' %}">Contactanos <i class="fa-solid fa-paper-plane fa-2xs"></i></li></a>
+          
+          </div>
+       </nav>
+      </div>  
+     </div> 
+
+     
+     
+     
+     
+     
+     {% if messages %}
+      {% for m in messages %}    
+        <script>
+          Swal.fire({
+            'title': 'Bienvenido',
+            'text': '{{m}}',
+            'icon': 'info'
+          })
+
+        </script>
+        {% endfor %}
+      {% endif %}  
+   
+ 
+
+ </header>
+ <main> <!--Main-->
+  {% if user.is_authenticated and user.groups.all.0.name == 'administrador' or user.is_superuser %}<!-- PANEL CONTROL ADMINISTRADOR-->
+  
+  <div class="container" style="margin-top: 200px;">
+    <div class="col">
+      <div class="card">
+        <div class="body-card bg-dark text-white">
+        <h3>Panel de Control </h3>
+        <p>Usuario: {{ user.username }}</p>
+        <div class="container">
+          <div class="row">
+          <div class="col-sm"><a href="{% url 'agregar_mecanico' %}"><button type="button" class="btn btn-outline-success">Agregar Mecánico <i class="fa-solid fa-plus fa-bounce fa-lg"></i></button></a></div>
+          <div class="col-sm"><a href="{% url 'listar_mecanico' %}"><button type="button" class="btn btn-outline-success">Modificar/Eliminar Mecánico <i class="fa-solid fa-trash fa-bounce fa-lg"></i>  </button></a></div>
+          <div class="col-sm"><a href="{% url 'listar_trabajo' %}"><button type="button" class="btn btn-outline-success">Autorizar/Rechazar Publicaciones <i class="fa-regular fa-eye fa-fade fa-lg"></i>  </button></a></div>
+          <div class="col-sm"><a href="{% url 'registro_mecanico' %}"><button type="button" class="btn btn-outline-success">Crear cuenta Mecanico <i class="fa-solid fa-at fa-bounce fa-lg"></i> </button></a></div>
+          <div class="col-sm"><a href="{% url 'listarCurriculum' %}"><button type="button" class="btn btn-outline-success">Ver Postulaciones -Trabajo- <i class="fa-regular fa-eye fa-fade fa-lg"></i> </button></a></div>
+        </div>        
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if user.is_authenticated and user.groups.all.0.name == 'mecanico' %} <!-- PANEL CONTROL mecanico-->
+  
+  <div class="container" style="margin-top: 200px;">
+    <div class="col">
+      <div class="card">
+        <div class="body-card bg-dark text-white">
+        <h3>Panel de Control </h3>
+        <p>Usuario: {{ user.username }}</p>
+        <div class="container">
+          <div class="row">
+        <div class="col-sm"><a href="{% url 'agregar_trabajo' %}"><button type="button" class="btn btn-outline-success">Agregar Nuevo Trabajo <i class="fa-solid fa-wrench fa-flip fa-lg"></i></button></a></div>
+        <div class="col-sm"><a href="{% url 'listar_trabajo4Mecanico' %}"><button type="button" class="btn btn-outline-success">Ver Estado de Trabajos <i class="fa-regular fa-eye fa-fade fa-lg"></i>  </button></a></div>
+      </div>
+      </div>        
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+</main> 
+
+ 
+ {% block contenido %}
+<main> <!--Main-->
+  
+
+ 
+
+
+
+
+  
+  
+</main>
+    {% endblock %}
+<footer> <!--footer-->
+  
+  
+
+  <div class="container" id="socials">
+    <div class="row">
+      
+        <div class="col-4"><a href="http://www.facebook.com" aria-label="Enlace a red social Faceook"><i class="fa-brands fa-facebook fa-beat-fade fa-lg"></i></a></div>
+        <div class="col-4"><a href="http://wwww.twitter.com" aria-label="Enlace a red social Twitter"><i class="fa-brands fa-twitter fa-beat-fade fa-lg" style="color: #4854fa;"></i></a></div>
+        <div class="col-4"><a href="http://www.istagram.com" aria-label="Enlcae a red social Instagram"><i class="fa-brands fa-instagram fa-beat-fade fa-lg" style="color: #c000f5;"></i></a></div>
+      
+    </div>
+  </div>   
+
+  <div class="container-fluid" >
+    <div class="row" >
+      <p>Todos los derechos reservados <br>Taller Mecanico Rayo Mkween ©</p>
+      <p aria-label="Sitio Web Accesible para usuarios que utilicen Aria.">_<i class="fa-brands fa-accessible-icon fa-bounce fa-lg"></i>_</p>
+      
+    </div>
+  </div>
+</div>      
+  
+  
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+  crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/1dfe34419e.js" crossorigin="anonymous"></script>
+</footer>   
+</body>  
+</html>

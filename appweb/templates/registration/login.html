@@ -1,0 +1,71 @@
+{% extends 'base.html ' %}
+{% load static %}
+
+
+
+{% block contenido %}
+{% block css %}
+<head>   
+<link rel="stylesheet" type="text/css" href="{% static 'loginstyles.css' %}">
+<title>Login</title>
+</head>
+<main>
+{% load crispy_forms_tags %}
+    <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card-body">
+          <h4>Ingreso Clientes <i class="fa-solid fa-lock fa-2xs"></i> </h4>
+          <form class="row mp-3 needs-validation" id="logincliente" action="" method="POST" novalidate>
+            {% csrf_token %}
+            {{ form | crispy }}
+  
+  
+            
+           
+  
+            <div class="container">
+              <div class="row"></div>
+  
+              <button id="entrarCliente" type="submit" class="btn btn-primary" aria-label="Boton Ingresar">Ingresar</button>
+    
+  
+            </div>
+  
+  
+          </form>
+        </div>
+  
+      </div>
+  
+    </div>
+  </div>
+  <script> //Script validacionForm Bootstrap
+
+    (function () {
+      'use strict'
+  
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+  
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+  
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })() 
+  
+  </script>
+  
+  
+  <script src="{% static 'js/validacionesClient.js' %}"></script>
+    {% endblock %} 
+  </main>
+  {%endblock%}

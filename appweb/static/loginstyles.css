@@ -1,0 +1,66 @@
+#formularioContacto {
+    margin-top: 25px;
+    
+}
+/* */
+h4 {
+    margin-top: 250px;
+    margin-left: 150px;;
+    margin-right: 200px;
+    margin-bottom: 60px;
+    align-items: center;
+    
+}
+
+h4:hover{
+    background-color: black;
+
+}
+
+
+/* Bordes formularios*/
+#logincliente {
+    margin-top: 30px;
+    margin-left: 150px;
+    margin-right: 200px;
+    margin-bottom: 200px;
+}
+
+#loginadmin {
+    margin-top: 30px;
+    margin-left: 150px;
+    margin-right: 200px;
+    margin-bottom: 200px;
+}
+
+#loginmecanicos {
+    margin-top: 30px;
+    margin-left: 150px;
+    margin-right: 200px;
+    margin-bottom: 200px;
+}
+
+#newUser{
+    margin-top: 30px;
+    margin-left: 150px;
+    margin-right: 200px;
+    margin-bottom: 200px;
+}
+/* --------------------------*/
+label:hover {
+    background-color: black;
+}
+
+footer {
+    text-align: center;
+    height:100px;
+}
+
+em {
+    font-size: 11px;    
+}
+
+#logoNavBar {
+    width: 35px;
+    height: 35px;
+}

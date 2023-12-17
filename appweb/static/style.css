@@ -1,0 +1,88 @@
+h2,h3 {
+    display:flex;
+    font-size: 15px;
+    text-align: center; 
+    width:700px;
+    font-family: "Courier New";  
+}
+
+h2:hover, h3:hover {
+    background-color: black;
+    font-weight: bold;
+    
+    
+}
+h2 {
+    font-size: 18px;
+    margin-top:100px;
+    
+}
+
+
+
+h4 {
+    margin-top: 120px;
+}
+
+h4:hover{
+    background-color: black;
+
+}
+
+
+
+
+footer {
+    text-align: center;
+    height:100px;
+    font-size: 12px;
+    margin-top: 100px;
+}
+
+label:hover {
+    background-color: black;
+}
+
+em {
+    font-size: 11px;    
+    color: grey;
+}
+
+#cont1 {
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 100px;
+    font-size: 15px;
+    
+}
+
+#carouselExampleIndicators{
+    margin-top: 65px;
+    margin-bottom: 200px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+#logoIndex{
+    width: 60px;
+    height: 60px;
+}
+
+#logoNavBar {
+    width: 35px;
+    height: 35px;
+}
+
+#botonesNav {
+    display: inline;
+}
+
+#botonesNav {
+    margin-right: 250px;
+}
+
+#socials {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}

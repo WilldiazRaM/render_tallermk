@@ -1,0 +1,84 @@
+{% extends 'base.html ' %}
+{% load static %}
+{% block contenido %}
+<head>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'homeStyle.css' %}">
+  <title>Login</title>
+
+</head>
+
+
+<main>
+
+
+  <div class="container" style="margin-top: 250px;" id="cont1" role="banner">  <!--Presentación pagina principal-->
+    <div class="container-fluid">
+      <div class="row"> 
+    
+    
+        
+      
+  <div class="container"><div class="col-4"><img id="logoIndex" aria-label="Imagen del Logotipo taller rayo mackween" src="{% static 'images/logo1.png' %}"/></div></div>        
+  <h2 aria-label="Seccción ¿Quienes Somos?">¿Quienes Somos?</h2>
+  <br>
+  
+
+  
+  <br>
+  <article role="region" aria-label="Descripcion del taller mecanico.">
+     <p> Somos un grupo de Mecanicos especializados que decidimos iniciar nuestro Taller mecanico.
+      Cada participantes aportan con su experiencia y habilidades particulares.
+      Mientras uno es especialista en electrónica automotriz, otro es especialista en cajas de cambio y otro en suspensión y dirección.
+     </p>
+     <p>
+      Nuestro taller esta en pleno crecimiento y ya nos hemos posicionado dentro de los mejores en una zona caracterizada por tener amplia competencia del mercado.
+     </p>
+    <h2 aria-label="Seccion Garantia">Garantía</h2>
+    <p>Las reparaciones de un vehículo a motor tienen una garantía de tres meses o dos mil kilómetros recorridos, es decir, lo que antes suceda. La pieza nueva instalada tendrá además el plazo de garantía general de dos años.</p>
+  </ul>
+  </article>
+
+
+  <div class="row">
+    <div class="col">
+    <h2 aria-label="Galeria de Trabajos">Galeria de Trabajos</h2>
+    <p>
+      En esta galería, encontrará una variedad de trabajos realizados en diferentes tipos de vehículos, desde reparaciones menores hasta grandes proyectos de restauración. Cada imagen incluye información relevante sobre el trabajo realizado, incluyendo detalles sobre el diagnóstico, los materiales utilizados y la duración del trabajo, asi como tambien el mecanico que realizó el trabajo.
+    </p>
+      </div> 
+  </div> 
+  <div class="row">
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        {% for trabajo in trabajos %}
+         {% if trabajo.autorizado %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+          <img src="{{ trabajo.imagenes.url }}" class="d-block w-100" alt="Imagen del trabajo">
+          <div class="carousel-caption">
+            <div class="card" style="opacity: 50%; height: 50%; width: 50%; margin: 0 auto;">
+              <div class="card-body" >
+            
+            <h5>{{ trabajo.titulo }}</h5>
+            
+            <p><a href="{% url 'listarTrabajosHome' trabajo.titulo %}" class="btn-mas-informacion">Más información</a></p>
+          </div>
+          </div>
+          </div>
+        </div>
+         {% endif %}
+        {% endfor %}
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </div>
+</div> 
+</main>
+  {%endblock%}

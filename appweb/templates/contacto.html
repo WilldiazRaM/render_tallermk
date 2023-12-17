@@ -1,0 +1,61 @@
+{% extends 'base.html ' %}
+{% load static %}
+{% block contenido %}
+
+
+{% if messages %}
+{% for m in messages %}    
+  <script>
+    Swal.fire({
+      'title': 'Enviado',
+      'text': '{{m}}',
+      'icon': 'success'
+    })
+
+  </script>
+  {% endfor %}
+{% endif %}  
+
+<main> <!--Main-->
+  {% load crispy_forms_tags %}
+    <div class="container" style="margin-top: 80px;">
+        <div class="row">
+          <div class="col">
+          <body class="--bs-secondary-colorbg-dark">            
+              <div class="p-3 mb-2 bg-dark text-white">         
+                <div class="d-flex justify-content-center">              
+                         <h4>Formulario de Contacto <i class="fa-solid fa-align-left fa-xs"></i></h4></div>                      
+                          <br>
+                          <br>
+                          <br>
+                          <form id="formularioContacto" action="" method="post" novalidate>
+
+                            {% csrf_token %}
+                            {{ form | crispy}}                            
+                            
+                          <div class="col">
+                                                        
+                            <button type="submit" class="btn btn-primary" aria-label="Enviar Formulario">Enviar</button>
+                                                                                                             
+          
+                                
+                            </div>         
+                            
+                                
+                          </form>
+                          
+                        </div>
+                          
+                      </div>
+                  </div>
+                </div>
+              </div>    
+            
+             
+            
+</main>
+{% block js %}
+    <script src=""></script>
+{% endblock %}
+{%endblock%}
+
