@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "tallermk"
+version = "0.1.0"
+description = "taller mecanido diseñado en DUOC"
+authors = ["Williams Diaz Santander"]
+readme = "README.md"
+poetry = "1.1.4"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
