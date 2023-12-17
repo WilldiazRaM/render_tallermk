@@ -1,4 +1,4 @@
-pip --upgrade
+pip install --upgrade pip
 django === 4.2.1
 pillow
 django-crispy-forms
