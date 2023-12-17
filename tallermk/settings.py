@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='tu clave secreta')
 DEBUG = 'RENDER' not in os.environ
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tallermecanico-1k35.onrender.com']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
