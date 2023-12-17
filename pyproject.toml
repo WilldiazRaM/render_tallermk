@@ -7,7 +7,11 @@ readme = "README.md"
 poetry = "1.7.1"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.8"
+django = "4.2.1"
+pillow = "*"
+django-crispy-forms = "*"
+crispy-bootstrap5 = "*"
 
 
 [build-system]
