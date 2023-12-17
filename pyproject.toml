@@ -12,6 +12,7 @@ django = "^4.2.1"
 pillow = "*"
 django-crispy-forms = "*"
 crispy-bootstrap5 = "*"
+gunicorn = "^21.2.0"
 
 
 [build-system]
