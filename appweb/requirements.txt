@@ -2,5 +2,6 @@ django==4.2.1
 pillow
 django-crispy-forms
 crispy-bootstrap5
-gunicorn==20.1.0
-psycopg2==2.9.9
+gunicorn
+psycopg2
+dj_database_url
