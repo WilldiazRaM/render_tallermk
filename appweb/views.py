@@ -3,7 +3,7 @@ from .models import Mecanico, Trabajo, Curriculum
 from .forms import Contacto, ContactoForm, MecanicoForm, AgregarTrabajoForm, ModificarTrabajoForm, CurriculumForm
 from django.contrib.auth.models import User,Group
 from django.contrib.auth import authenticate, login
-from django.contrib import messages
+from django.contrib import messages 
 
 
 
