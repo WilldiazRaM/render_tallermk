@@ -2,6 +2,7 @@ from django.urls import path
 from .views import home, eliminarCurriculum , listar_trabajo4Mecanico, contacto, galeriaMecanicos, agregar_mecanico, listar_mecanico, modificar_mecanico, eliminar_mecanico, login_usuario, registro_mecanico, agregar_trabajo, listar_trabajos, modificar_trabajo, autorizar_trabajo, rechazar_trabajo, trabaja_con_nosotros, listarTrabajoHome, listarCurriculums, verPostulacion
 from django.conf import settings
 from django.conf.urls.static import static
+from . import views
 
 urlpatterns = [
     path('', home, name='home'),
