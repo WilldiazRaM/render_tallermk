@@ -1,6 +1,24 @@
+databases:
+  - name: inventorymine
+    databaseName: inventorymine
+    user: inventorymine_user
+    password:
+      fromDatabase:
+        name: inventorymine
+        property: password
+
 services:
   - type: web
     name: tallermk
+    runtime: python
     buildCommand: "./build.sh"
-    env: python
     startCommand: "gunicorn tallermk.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: inventorymine
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
