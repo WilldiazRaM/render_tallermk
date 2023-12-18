@@ -3,3 +3,4 @@ pillow
 django-crispy-forms
 crispy-bootstrap5
 gunircorn
+psycopg2==2.9.9
