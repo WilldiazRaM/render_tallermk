@@ -137,6 +137,18 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'appweb', 'static'),
     
 ]
+
+
+    
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+MEDIA_URL = '/archivos/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "archivos")
+
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
@@ -150,11 +162,3 @@ if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
     # Turn on WhiteNoise storage backend that takes care of compressing static files
     # and creating unique names for each version so they can safely be cached forever.
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-    
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-
-MEDIA_URL = '/archivos/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "archivos")
