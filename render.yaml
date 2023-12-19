@@ -9,11 +9,10 @@ services:
     runtime: python
     buildCommand: "./build.sh"
     startCommand: "gunicorn tallermk.wsgi:application"
-    preDeploy: "python manage.py collectstatic --noinput"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: tallermk
+          name: mysite
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
