@@ -8,7 +8,8 @@ services:
     name: tallermk
     runtime: python
     buildCommand: "./build.sh"
-    tartCommand: "gunicorn tallermk.wsgi:application --bind 0.0.0.0:$PORT"
+    startCommand: "gunicorn tallermk.wsgi:application --bind 0.0.0.0:$PORT --workers 4 --log-level=info"
+    preDeploy: "python manage.py collectstatic --noinput"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
