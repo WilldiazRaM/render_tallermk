@@ -13,6 +13,7 @@ pillow = "*"
 django-crispy-forms = "*"
 crispy-bootstrap5 = "*"
 gunicorn = "^21.2.0"
+whitenoise = {extras = ["brotli"], version = "^6.6.0"}
 
 
 [build-system]
