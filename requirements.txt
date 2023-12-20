@@ -49,7 +49,6 @@ shellingham==1.5.4
 sniffio==1.3.0
 sortedcontainers==2.4.0
 sqlparse==0.4.4
--e git+ssh://git@github.com/WilldiazRaM/render_tallermk.git@83fc9e9098d85ecfc054561c9c5d88d62b9226b6#egg=tallermk
 tomlkit==0.12.2
 trio==0.23.1
 trio-websocket==0.11.1
