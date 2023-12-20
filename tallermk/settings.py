@@ -109,13 +109,12 @@ WSGI_APPLICATION = 'tallermk.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        # Feel free to alter this value to suit your needs.
-        default='postgresql://postgres:postgres@localhost:5432/tallermk',
-        conn_max_age=600
-    )
+    'default': {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
 }
-
+DATABASES['default'] = dj_database_url.parse("postgres://djago_tallermk_user:5UKupbzyiZOnc9IrBPRPHCWXfHu1guOs@dpg-cm1gkq8cmk4c73dah540-a.oregon-postgres.render.com/djago_tallermk")
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
