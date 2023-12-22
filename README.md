@@ -30,7 +30,7 @@
   - Búsqueda de mecánicos por nombre.
 
 - **Formulario de Contacto:**
-  - Menú para enviar currículum.
+  - Formulario de contacto para clientes [reclamos, sugerencias].
 
 - **Accesibilidad:**
   - Sistema ARIA implementado para personas con discapacidad visual.
@@ -59,9 +59,6 @@ La aplicación está actualmente en producción en [Render](https://tallermk-app
 
 - Williams Diaz
 
-## Agradecimientos
-
-Agradecemos a todos los contribuidores que han ayudado a mejorar esta aplicación y especialmente al Profesor Sebastian Vidal.
 
 ---
 *Este proyecto está en constante desarrollo y mejora.*
