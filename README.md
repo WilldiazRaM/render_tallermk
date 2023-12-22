@@ -8,9 +8,11 @@
   - Información del taller.
   - Carrusel con detalles de trabajos realizados.
   - Menú de navegación (barnav) con opciones como "¿Quiénes somos?" y "Enviar Currículum".
+  - Formulario de Contacto
+  - Trabaja con Nosotros
 
-- **Registro y Login:**
-  - Registro y login para administradores y mecánicos.
+- **Login:**
+  - Login para administradores y mecánicos.
 
 - **Trabajos:**
   - Mecánicos pueden subir trabajos con detalles y una imagen.
@@ -59,7 +61,7 @@ La aplicación está actualmente en producción en [Render](https://tallermk-app
 
 ## Agradecimientos
 
-Agradecemos a todos los contribuidores que han ayudado a mejorar esta aplicación.
+Agradecemos a todos los contribuidores que han ayudado a mejorar esta aplicación y especialmente al Profesor Sebastian Vidal.
 
 ---
 *Este proyecto está en constante desarrollo y mejora.*
