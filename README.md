@@ -48,8 +48,7 @@ En la página principal, el carrusel de imágenes muestra trabajos realizados. C
 | Diagnóstico 1  | 2da prueba probando imágenes      | Richard Lopez   | Diagnóstico |
 
 ## Uso
-
-La aplicación está actualmente en producción en [Render](https://tallermk-app.onrender.com). Puedes acceder y explorar la funcionalidad en el entorno de producción.
+-Solo esta el codigo de la app. Fue desplegada en render.com con capas gratuitas pero ya no existen.
 
 ## Contribuciones
 
